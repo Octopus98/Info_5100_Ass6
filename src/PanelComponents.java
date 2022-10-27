@@ -1,3 +1,10 @@
+/**
+ * Assignment6
+ * [Yuhao Zhang]
+ * [002743843]
+ * [Section08]
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +14,7 @@ public class PanelComponents {
     static JLabel weightedScore ;
     static JFrame frame;
     public static void placeComponents(){
+        //Set the frame
         frame = new JFrame("Weighted Grade");
         frame.setSize(1000,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,21 +35,19 @@ public class PanelComponents {
 
         JTextField totalText = new JTextField(4);
         totalText.setBounds(20, 70, 200,25);
-//        int totalTemp = Integer.parseInt(totalText.getText());
         panel.add(totalText);
 
         JTextField earnedText = new JTextField(4);
         earnedText.setBounds(600, 70, 200,25);
-//        int earnedTemp = Integer.parseInt(earnedText.getText());
         panel.add(earnedText);
 
         JTextField percentText = new JTextField(3);
         percentText.setBounds(20, 250, 200, 25);
-//        int percentTemp = Integer.parseInt(percentText.getText());
         panel.add(percentText);
 
         JButton calculate = new JButton("Click to calculate score");
         calculate.setBounds(400, 400, 200,35);
+        //Listener method to calculate
         calculate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,6 +73,7 @@ public class PanelComponents {
 
     }
 
+    //method for displaying final result
     private static void output(String str){
         weightedScore = new JLabel("Weighted Score:  " + str);
         weightedScore.setBounds(400, 450, 200, 35);
